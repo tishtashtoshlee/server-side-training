@@ -4,7 +4,6 @@ need to add extra functions and the Mixpanel integration code in this
 file.
 **/
 
-
 // changes the image to a random corgi via hardcoded links
 function getCorgi() {
     var corgis = [
@@ -27,4 +26,13 @@ function getCorgi() {
     var randomNumber = Math.floor((Math.random() * corgis.length));
     var chosenCorgi = corgis[randomNumber];
     document.getElementById("corgi_image").src = chosenCorgi;
+}
+
+function trackLogOut() {
+    alert('Log Out1');
+    mixpanel.track('Log Out', {
+   'Logged Out': 'true' });
+    mixpanel.reset();
+
+
 }
